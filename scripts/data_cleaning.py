@@ -82,7 +82,7 @@ def clean_data(df):
     # -------------------------------
     # DATE & TIME FIX (SAFE)
     # -------------------------------
-    df = df.dropna(subset=["order_date"])
+    df = df.dropna(subset=["order_date"]).copy()
 
     df.loc[:, "order_time"] = df["order_time"].fillna(df["order_time"].mode()[0])
 
